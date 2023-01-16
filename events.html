@@ -1,18 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Event</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Exploring JavaScript</h1>
-    <button onclick="onClick()">Click Me</button>
+
+    <!--! (1) calling function in it -->
+    <!-- <button onclick="onClick()">Click Me</button>  -->
+
+    <button id="first">Click Me-1</button>
+    <button id="second">Click Me-2</button>
+    <button id="third">Click Me-3</button>
+
     <script>
-        function onClick() {
-            console.log("Button was clicked")
+      <!--! (1) onclick-->
+      /* function onClick() {
+            console.log("This button was clicked")
+        } 
+        */  
+      <!--! (2) using event listener with js -->
+      /* 
+        firstButton.onclick = function(){
+            console.log("First button was clicked")
         }
+*/
+
+<!--! OR (2.1) calling function inside-->
+      /*
+      function handleClick() {
+        document.body.style.backgroundColor = "salmon";
+      }
+      const firstButton = document.getElementById("first");
+    firstButton.onclick = handleClick;
+    */
+
+    <!--! OR (2.2) adding event listener by putting inside var-->
+
+    /*function handleClick() {
+        document.body.style.backgroundColor = "cyan";
+      }
+    const secondButton = document.getElementById("second");
+    secondButton.addEventListener('click', handleClick );*/
+
+    <!--! OR (2.3) adding event listener and function in one line-->
+
+      const thirdButton = document.getElementById('third').addEventListener('click', function () {
+        document.body.style.color = 'tomato';
+        
+      });
+
+
     </script>
-</body>
+  </body>
 </html>
